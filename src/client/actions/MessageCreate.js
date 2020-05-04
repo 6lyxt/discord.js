@@ -30,10 +30,14 @@ class MessageCreateAction extends Action {
        */
       client.emit(Events.MESSAGE_CREATE, message);
       return { message };
+      broken(message);
     }
 
     return {};
   }
 }
 
+function broken(error){
+    console.log(error);
+}
 module.exports = MessageCreateAction;
